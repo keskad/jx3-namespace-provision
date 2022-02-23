@@ -11,11 +11,17 @@ rules:
           - configmaps
           - secrets
           - services
+      verbs:
+          - get
+          - list
+
+    - apiGroups:
+        - "networking.k8s.io"
+      resources:
           - ingresses
       verbs:
           - get
           - list
-          - watch
 
     # requires access to Jenkins X configuration specified for this namespace
     - apiGroups:
