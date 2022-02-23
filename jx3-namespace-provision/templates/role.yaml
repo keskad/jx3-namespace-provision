@@ -4,6 +4,18 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
     name: tekton-bot
 rules:
+{{ if .Values.isNamespaceAdmin -}}
+    - apiGroups:
+          - '*'
+      resources:
+          - '*'
+      verbs:
+          - '*'
+    - nonResourceURLs:
+          - '*'
+      verbs:
+          - '*'
+{{- else }}
     # needs access to GIT, Artifactory etc. credentials
     - apiGroups:
           - ""
@@ -15,6 +27,7 @@ rules:
           - get
           - list
 
+    # jx gitops variables
     - apiGroups:
         - "networking.k8s.io"
       resources:
@@ -42,3 +55,4 @@ rules:
           - list
           - create
           - update
+{{ end }}

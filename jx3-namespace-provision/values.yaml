@@ -1,4 +1,8 @@
 
+# namespace admin can perform deployments in SAME NAMESPACE
+# while if .isNamespaceAdmin is set to false, then only necessary permissions for pipeline completion (without CD part) are granted
+isNamespaceAdmin: false
+
 secrets:
     registryDockerConfigJson: ""
     gitUsername: "user"
