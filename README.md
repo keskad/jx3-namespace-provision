@@ -1,5 +1,7 @@
 # jx3-namespace-provision
-Creates all required resources to run Jenkins X jobs in a namespace
+Creates all required resources to run Jenkins X jobs in a selected namespace, where those resources were installed. 
+
+Can be used to install DIFFERENT secrets to various namespaces as a part of namespace separation. See https://github.com/jenkins-x/lighthouse/pull/1424
 
 Running
 -------
