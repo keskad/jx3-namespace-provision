@@ -3,6 +3,7 @@ secrets:
     registryDockerConfigJson: ""
     gitUsername: "user"
     gitPassword: "password"
+    gitProviderUrl: https://github.com
 
 serviceAccounts:
     - serviceAccountName: tekton-bot
