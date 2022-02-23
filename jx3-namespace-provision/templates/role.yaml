@@ -10,6 +10,7 @@ rules:
       resources:
           - configmaps
           - secrets
+          - services
       verbs:
           - get
           - list
@@ -20,7 +21,6 @@ rules:
           - "jenkins.io"
       resources:
           - environments
-          - services
       verbs:
           - get
           - list
