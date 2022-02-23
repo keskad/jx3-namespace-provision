@@ -2,7 +2,7 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-    name: tekton-job
+    name: tekton-bot
 rules:
     # needs access to GIT, Artifactory etc. credentials
     - apiGroups:
