@@ -9,8 +9,8 @@ serviceAccounts:
       imagePullSecrets:
           - name: tekton-container-registry-auth
       secrets:
-          - tekton-git
-          - tekton-container-registry-auth
+          - name: tekton-git
+          - name: tekton-container-registry-auth
 
 environment:
     name: dev
