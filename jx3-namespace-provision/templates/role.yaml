@@ -20,8 +20,17 @@ rules:
           - "jenkins.io"
       resources:
           - environments
-          - pipelineactivities
       verbs:
           - get
           - list
           - watch
+
+    - apiGroups:
+        - "jenkins.io"
+      resources:
+          - pipelineactivities
+      verbs:
+          - get
+          - list
+          - create
+          - update
