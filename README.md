@@ -12,6 +12,12 @@ values.yaml
 -----------
 
 ```yaml
+secrets:
+    registryDockerConfigJson: |
+        ...
+    gitUsername: "user"
+    gitPassword: "password"
+
 environment:
     installRepo:
         branch: master
