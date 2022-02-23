@@ -4,7 +4,14 @@
 isNamespaceAdmin: false
 
 secrets:
-    registryDockerConfigJson: ""
+    registryDockerConfigJson: |
+        {
+            "auths":{
+                "ghcr.io": {
+                    "auth": "tralalalala"
+                }
+            }
+        }
     gitUsername: "user"
     gitPassword: "password"
     gitProviderUrl: https://github.com

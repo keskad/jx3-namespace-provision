@@ -14,10 +14,18 @@ values.yaml
 ```yaml
 secrets:
     registryDockerConfigJson: |
-        ...
+        {
+            "auths":{
+                "ghcr.io": {
+                    "auth": "tralalalala"
+                }
+            }
+        }
     gitUsername: "user"
     gitPassword: "password"
+    gitProviderUrl: https://github.com
 
+# you may take a look at your jx3 installation repository to pick same values
 environment:
     installRepo:
         branch: master
