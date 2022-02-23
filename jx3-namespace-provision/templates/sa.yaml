@@ -1,0 +1,19 @@
+{{- range .Values.serviceAccounts }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+    name: {{ .serviceAccountName }}
+    labels:
+        gitops.jenkins-x.io/pipeline: namespaces
+
+{{ with .imagePullSecrets }}
+imagePullSecrets:
+    {{ . | toYaml | indent 4 }}
+{{ end }}
+{{ with .secrets -}}
+secrets:
+{{ . | toYaml | indent 4 }}
+{{ end }}
+
+{{ end }}

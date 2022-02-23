@@ -1,0 +1,20 @@
+---
+apiVersion: jenkins.io/v1
+kind: Environment
+metadata:
+    labels:
+        env: {{ .Values.environment.name }}
+        gitops.jenkins-x.io/pipeline: namespaces
+        team: jx
+    name: {{ .Values.environment.name }}
+spec:
+    kind: Development
+    label: Development
+    namespace: {{ .Release.Namespace }}
+    promotionStrategy: Never
+    source:
+        ref: {{ .Values.environment.installRepo.branch }}
+        url: {{ .Values.environment.installRepo.url }}
+    teamSettings:
+{{ .Values.environment.settings | toYaml | indent 8 }}
+    webHookEngine: Lighthouse
