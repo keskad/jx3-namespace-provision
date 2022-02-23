@@ -20,6 +20,7 @@ rules:
           - "jenkins.io"
       resources:
           - environments
+          - pipelineactivities
       verbs:
           - get
           - list
